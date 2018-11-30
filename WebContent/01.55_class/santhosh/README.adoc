@@ -1,0 +1,8 @@
+1. Do you have a github id? Yes/No
+2. Does your machine have GITHUB desktop Application? Yes/No. 
+3. Open It.
+
+4. Open windows explore and select a folder where you want to download project files?
+5. Got to GITHUB desktop, Clone Select "URL", enter "https://github.com/Adamson-ptech/webdev2018" to the folder you previously selected.
+6. Confirm you can see a new project folder in explorer.
+7. In explorer - open the folders all the web to ""
