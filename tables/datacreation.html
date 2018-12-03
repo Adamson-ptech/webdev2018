@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8"/>
+        <style>
+            body {
+                background-color: lightblue;
+                font-family: verdana;
+            }
+            td, input, h1 {
+                padding: 5px;
+                font-family: verdana;
+            }
+            td {
+                min-width: 200px;
+            }
+            input[type="text"], select, option {
+                font-family: verdana;
+                font-size: 100%;
+            }
+            td.label {
+                text-align: right;
+            }
+            .result {
+                margin-top: 1cm;
+                font-size: 120%;
+                background-color: AntiqueWhite;
+            }
+            .submit {
+                width: 10em;
+                border: 2px solid black;
+                font-size: 100%
+            }
+        </style>
+        <script src="datacreation.js"></script>
+        <title>Data Creation</title>
+    </head>
+    <body>
+        <table>
+            <tr style="vertical-align:top"><td>
+            <h1 style="text-align: center;">Create a PNR</h1>
+            <form id="createPNR">
+                <table>
+                    <tr><td class="label">Sabre partition:</td><td><input type="radio" name="sabrePartition" value="CERT" checked="checked"/>&nbsp;CERT&nbsp;&nbsp;
+                            <input type="radio" name="sabrePartition" value="TSTS"/>TSTS</td></tr>
+                    <tr><td class="label">First name:</td><td><input id="firstName" type="text" name="firstName" autofocus /></td></tr>
+                    <tr><td class="label">Last name:</td><td><input id="lastName" type="text" name="lastName" /></td></tr>
+                    <tr><td class="label">Number of passengers:</td><td><input id="numberOfPassengers" type="text" name="numberOfPassengers" value="1"/></td></tr>
+                    <tr><td class="label">AAdvantage number:</td><td><input id="aadvantageNumber" type="text" name="aadvantageNumber" /> (optional)</td></tr>
+                    <tr>
+                        <td class="label">Departure time range:</td>
+                        <td>
+                            <select id="flightTimeScope">
+                                <option value="ONE_HOUR_OUT">between 1 - 24 hours</option>
+                                <option value="FOUR_HOURS_OUT">between 4 - 24 hours</option>
+                                <option value="ONE_DAY_OUT">between 24 - 48 hours</option>
+                                <option value="THREE_DAYS_OUT">between 72 - 84 hours</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td class="label">Seat assignment:</td><td><input type="radio" name="seatAssignment" value="NoSeat" checked/>&nbsp;No Seat&nbsp;&nbsp;
+                    <input type="radio" name="seatAssignment" value="ExitSeat"/>&nbsp;Exit Seat<br>
+                    <input type="radio" name="seatAssignment" value="RandomSeat"/>&nbsp;Random Seat</td></tr>
+                    <tr><td class="label">Cabin:</td><td><select id="cabin">
+                        <option value="COACH">Regular coach</option>
+                        <option value="FIRST">First class</option>
+                        <option value="BUSINESS">Business</option>
+                        <option value="BASICECONOMY">Basic economy</option>
+                        <option value="PREMIUMECONOMY">Premium economy</option>
+                        <option value="AWARD_COACH">Award coach</option>
+                        </select>
+                    </td></tr>
+                    <tr>
+                        <td class="label">Trip type:</td>
+                        <td><input type="radio" name="roundTrip" value="NOT_ROUND_TRIP"
+                                   checked="checked"/>&nbsp;One Way&nbsp;&nbsp;
+                            <input type="radio" name="roundTrip" value="RETURN_LESS_THAN_24_HOURS"/>&nbsp;Round Trip (return &lt;24 hours)
+                        </td>
+                    </tr>
+                    <tr><td class="label">Special Service Request:</td><td><select id="specialServiceRequest">
+                        <option value="None">None</option>
+                        <option value="DrinkCoupon">Drink Coupon</option>
+                        <option value="Firearm">Firearm</option>
+                        <option value="Infant">Infant</option>
+                        <option value="IrregularOperationsCancel">Irregular Operations - Canceled</option>
+                        <option value="IrregularOperationsDelay">Irregular Operations - Delayed</option>
+                        <option value="Pet">Pet</option>
+                        <option value="UnaccompaniedMinor">Unaccompanied Minor</option>
+                        <option value="WeaponInBag">Weapon In Bag</option>
+                    </select>
+                        </td></tr>
+                    <tr>
+                        <td class="label">Operating Carrier Type:</td>
+                        <td>
+                    <select id="operatingCarrierType">
+                        <option value="MainlineAndRegionalAndCodeshare">Mainline, regional, & codeshare</option>
+                        <option value="MainlineAndRegional">Mainline & regional</option>
+                        <option value="Mainline">Mainline</option>
+                    </select>
+                </td>
+                    </tr>
+                    <td colspan=2><table style="border: 1px solid black;">
+                        <tr>
+                            <td><input type="radio" name="marketChoice" id="marketChoice"
+                                       value="find" checked/>&nbsp;Find a market:&nbsp;&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Scope:</td>
+                            <td><select id="scope">
+                                <option value="DOMESTIC">Domestic</option>
+                                <option value="NON_US_DESTINATION">Non-US destination</option>
+                                <option value="NON_US_ORIGIN">Non-US origin</option>
+                            </select>
+                    </td></tr>
+                    <tr><td class="label">Number of cabins:</td><td><select id="numberOfCabins">
+                        <option value="0">any</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        </select>
+                    </td></tr>
+                    </table></td></tr>
+                    <td colspan=2><table style="border: 1px solid black;">
+                    <tr><td><input type="radio" name="marketChoice" id="marketChoice" value="specify"/>&nbsp;Specify a market:&nbsp;&nbsp;</td></tr>
+                    <tr><td class="label">Origin airport code:</td><td><input id="originAirport" type="text" /></td></tr>
+                    <tr><td class="label">Destination airport code:</td><td><input id="destinationAirports" type="text" /></td></tr>
+                    </table></td></tr>
+                    <tr><td class="label">Country of residence:</td><td><input type="text" id="passportCountryOfResidence" name="passportCountryOfResidence" value="US" /></td></tr>
+                    <tr><td class="label">Passport country of issue:</td><td><input type="text" id="passportNationality" name="passportNationality" value="" /></td></tr>
+                    <tr><td class="label">Passport number:</td><td>2938475647</td></tr>
+                    <tr><td class="label">Passport expiration:</td><td>01 JAN 2020</td></tr>
+                    <tr><td class="label">Phone number:</td><td>9999999999</td></tr>
+                    <tr><td class="label">Date of birth:</td><td>16 JAN 1990</td></tr>
+                </table>
+                <br />
+                <input type="submit" class="submit" id="submit" value="Submit" />
+            </form>
+            </td>
+            <td>
+            <h1 style="text-align: center;">Work with a PNR</h1>
+                <form id="lookup">
+                <div id="result" class="result"></div>
+                <br>
+                <table>
+                    <tr><td class="label">Sabre partition:</td>
+                        <td><input type="radio" name="sabrePartition" value="CERT" checked="checked"/>&nbsp;CERT&nbsp;&nbsp;
+                            <input type="radio" id="workPartition" name="sabrePartition" value="TSTS"/>TSTS</td></tr>
+                    <tr><td class="label">Record locator:</td><td><input id="recordLocator" type="text" /></td></tr>
+                </table>
+                <br />
+                <input type="submit" class="submit" id="submitLookup" value="Look up PNR" />
+                <input type="submit" class="submit" id="submitCancel" value="Cancel PNR" />
+            </form>
+            </td></tr>
+        </table>
+        <p align="center"><i>The community supporting this service is on the <a href="https://americanairlines.slack.com/messages/C6WCDDD7Y">#ct-help-datacreation channel</a> on the AmericanAirlines Slack team.</i></p>
+    </body>
+</html>
