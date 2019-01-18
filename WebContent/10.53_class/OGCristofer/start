@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel='shortcut icon' href="favicon.png" type="image/x-icon"/>
+
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>secret start menu</title>
+  </head>
+  <body>
+ <div>
+  <h1>E</h1>
+  <h2>OGCristofer.com</h2>
+  <a href="http://management.ogcristofer.com/">Site Management</a><br>
+  <a href="http://school.ogcristofer.com/">School Website</a> // <a href="http://school.ogcristofer.com/wp-admin/">Management</a><br>
+  <a href="http://photography.ogcristofer.com">Photography website</a> // <a href="http://photography.ogcristofer.com/wp-admin">Management</a>
+   <h2>ｌｉｎｋｓ</h2>
+  <ul>
+    <li><a href="http://www.testout.com/">testout</a></li> 
+     <li><a href="http://clever.com">Clever</a></li>
+     <li><a href="https://google.co.jp">Google</a></li>
+     <li><a href="http://eagate.573.jp">eAmusement</a></li>
+     <li><a href="http://keymaker.link">Keymaker</a></li>
+     <li><a href="https://tools.bartlweb.net/webssh/">Online SSH Client</a></li>
+  </ul>
+ </div>
+ <div>
+     <h2> Entourage Management </h2>
+     <ul>
+       <li><a href="http://edo.entourageyearbooks.com/YearbookLadder2.asp?yearbook_id=36411&_s=6F526661-0F14-4CC5-8BCD-B91163CE1371">Yearbook Ladder</a></li>
+       <li><a href="http://edo.entourageyearbooks.com/YearbookStaff.asp?yearbook_id=36411&_s=6F526661-0F14-4CC5-8BCD-B91163CE1371">Yearbook Staff</a></li>
+       <li><a href="http://edo.entourageyearbooks.com/ManagePhotos.asp?yearbook_id=36411&_s=6F526661-0F14-4CC5-8BCD-B91163CE1371">Photo Manager</a></li>
+     </ul>
+     <h3>Other stuff.</h1>
+     <a href="http://edo.entourageyearbooks.com/Designer.asp?yearbook_id=36411&_s=6F526661-0F14-4CC5-8BCD-B91163CE1371">Yearbook designer</a>
+   </div>
+</body>
+</html>
